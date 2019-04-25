@@ -1,6 +1,7 @@
 package com.ndcc.ndccservicelogin.service.impl;
 
 
+import com.ndcc.ndccservicelogin.model.UserLogin;
 import com.ndcc.ndccservicelogin.entity.UserLoginEntity;
 import com.ndcc.ndccservicelogin.repository.LoginRepo;
 import com.ndcc.ndccservicelogin.resource.Login;
@@ -25,7 +26,7 @@ public class LoginServiceImpl implements LoginService {
      * @return
      */
     @Override
-    public boolean isUserExists(UserLoginEntity user) {
+    public boolean isUserExists(UserLogin user) {
 
         log.debug("Verify if user exists");
 
