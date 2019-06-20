@@ -1,5 +1,5 @@
 
-@Library('ndcc-shared-lib') _
+@Library('https://github.com/ndccroyals/ndcc-shared-lib') _
 ndccservice.groovy
 
 /*node {
