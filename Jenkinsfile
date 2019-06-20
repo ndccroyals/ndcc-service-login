@@ -1,4 +1,8 @@
-node {
+
+@Library('ndcc-shared-lib') _
+ndccservice.groovy
+
+/*node {
    def mvnHome
    def gradleHome
 	
@@ -28,8 +32,8 @@ node {
 		   }
 		   }
 		   
-     // junit '**/target/surefire-reports/TEST-*.xml'
+     // junit 'target/surefire-reports/TEST-*.xml'
      // archive 'target/*.jar'
   // }
    
-}
+}*/
