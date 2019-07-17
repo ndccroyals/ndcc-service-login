@@ -2,11 +2,12 @@ plugins {
 	id 'org.springframework.boot' version '2.1.4.RELEASE'
 	id 'java'
 }
+apply plugin: 'maven'
 
 apply plugin: 'io.spring.dependency-management'
 
 group = 'com.ndcc'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.2-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 /*configurations {
@@ -33,4 +34,17 @@ dependencies {
 	//annotationProcessor 'org.projectlombok:lombok'
 	compile 'org.springframework.boot:spring-boot-starter-test'
 	compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+}
+
+uploadArchives {
+	repositories {
+		mavenDeployer {
+			repository(url: "${nexusUrl}/repository/DEV/") {
+				authentication(userName: "admin", password: "arya@1983")
+			}
+			snapshotRepository(url: "${nexusUrl}/repository/SNAPSHOT/") {
+				authentication(userName: "admin", password: "arya@1983")
+			}
+		}
+	}
 }
