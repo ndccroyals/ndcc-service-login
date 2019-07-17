@@ -1,8 +1,8 @@
 
-@Library('https://github.com/ndccroyals/ndcc-shared-lib') _
-ndccservice.groovy
+/*@Library('https://github.com/ndccroyals/ndcc-shared-lib') _
+ndccservice.groovy*/
 
-/*node {
+node {
    def mvnHome
    def gradleHome
 	
@@ -31,9 +31,18 @@ ndccservice.groovy
 		   bat(/"${gradleHome}\bin\gradle" clean build/)
 		   }
 		   }
+	stage('publish artifact') {
+        if (isUnix()){
+		//sh "'${gradleHome}/bin/gradle clean build'"
+		sh "./gradlew uploadArchives"
+		} else {
+		   bat(/"${gradleHome}\bin\gradle" clean build/)
+		   }
+		   }
+	
 		   
      // junit 'target/surefire-reports/TEST-*.xml'
      // archive 'target/*.jar'
   // }
    
-}*/
+}
